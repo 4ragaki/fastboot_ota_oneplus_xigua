@@ -44,6 +44,8 @@ do
   if [ $? -ne 0 ] ; then echo "Flash $part error"; exit 1; fi
 done
 
+fastboot wipe-super super_empty.img
+
 echo "Deleting logical partitions"
 for part in "${lgc_partitions[@]}"
 do
